@@ -1,0 +1,37 @@
+(import "gui/lisp.inc")
+(import "lib/task/global.inc")
+
+(enums +event 0
+    (enum close)
+    (enum refresh)
+    (enum terminate))
+
+(ui-window *window* ()
+    (ui-title-bar _ "Task Manager" (0xea19) +event_close)
+    (ui-tool-bar *main_toolbar* ()
+        (ui-buttons (0xe9e8) +event_refresh))
+    (ui-grid *task_grid* (:grid_width 3 :color +argb_white)
+        (ui-label _ (:text "PID" :color +argb_black))
+        (ui-label _ (:text "Name" :color +argb_black))
+        (ui-label _ (:text "CPU (%)" :color +argb_black))))
+
+(defun refresh-tasks ()
+    (. *task_grid* :sub)
+    (each (lambda (task)
+        (bind '(pid name cpu) task)
+        (. *task_grid* :add_child (ui-label _ (:text (str pid) :color +argb_black)))
+        (. *task_grid* :add_child (ui-label _ (:text name :color +argb_black)))
+        (. *task_grid* :add_child (ui-label _ (:text (str cpu) :color +argb_black))))
+      (global-tasks)))
+
+(defun main ()
+    (bind '(x y w h) (apply view-locate (. *window* :pref_size)))
+    (gui-add-front-rpc (. *window* :change x y w h))
+    (refresh-tasks)
+    (while (cond
+        ((= (defq id (getf (defq msg (mail-read (task-netid))) +ev_msg_target_id)) +event_close)
+            :nil)
+        ((= id +event_refresh)
+            (refresh-tasks))
+        (:t (. *window* :event msg))))
+    (gui-sub-rpc *window*))
