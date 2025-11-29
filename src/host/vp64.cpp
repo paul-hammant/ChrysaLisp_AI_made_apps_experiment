@@ -229,6 +229,18 @@ std::string opcodeDesc[] = {
 	"VP64_DIV_RRR",
 	"VP64_DIV_RRR_U",
 
+	"VP64_MIN_CR_0",
+	"VP64_MIN_CR_1",
+	"VP64_MIN_CR_2",
+	"VP64_MIN_CR_3",
+	"VP64_MAX_CR_0",
+	"VP64_MAX_CR_1",
+	"VP64_MAX_CR_2",
+	"VP64_MAX_CR_3",
+	"VP64_MIN_RR",
+	"VP64_MAX_RR",
+	"VP64_ABS_RR",
+
 	"VP64_SEQ_CR_0",
 	"VP64_SEQ_CR_1",
 	"VP64_SEQ_CR_2",
@@ -329,6 +341,8 @@ std::string opcodeDesc[] = {
 
 int vp64(uint8_t* data, int64_t *stack, int64_t* argv, int64_t* host_os_funcs, int64_t* host_gui_funcs, int64_t* host_audio_funcs, int64_t* host_net_funcs)
 {
+	printf("Entering vp64\n");
+	fflush(stdout);
 	int64_t regs[16];
 	int16_t* pc;
 	int64_t ir;
@@ -469,7 +483,7 @@ int vp64(uint8_t* data, int64_t *stack, int64_t* argv, int64_t* host_os_funcs, i
 				uint64_t o0 = (uint64_t)*(uint16_t*)pc++;
 				uint64_t o1 = (uint64_t)*(uint16_t*)pc++ << 16;
 				uint64_t o2 = (uint64_t)*(uint16_t*)pc++ << 32;
-				int64_t o3 = (int64_t)*(uint16_t*)pc++ << 48;
+				int64_t o3 = (int64_t)*pc++ << 48;
 				compare1 = regs[(ir >> 8) & 0xf];
 				compare2 = (o0 | o1 | o2 | o3);
 			}
@@ -1508,7 +1522,8 @@ int vp64(uint8_t* data, int64_t *stack, int64_t* argv, int64_t* host_os_funcs, i
 
 			default:
 			{
-				std::cout << "Unrecognised opcode " << (ir & 0xff) << " " << std::endl;
+				printf("Unrecognised opcode %d\n", ir & 0xff);
+				fflush(stdout);
 				break;
 			}
 			break;

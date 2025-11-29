@@ -147,7 +147,7 @@
 					(assign '((:r0 array_length) (:rsp local_start)) '(:r2 :r3))
 					(vp-sub-rr :r3 :r2)
 					(vpif '(:r2 >= 2000))
-						(debug-str '("Exessive prebind recursion !"))
+						(debug-str '("Excessive prebind recursion !"))
 						(break 'next_elem)
 					(endif))
 					(call 'array :push_back '(:r0 :r1))

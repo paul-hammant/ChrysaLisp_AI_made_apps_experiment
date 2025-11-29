@@ -100,15 +100,15 @@ int main(int argc, char *argv[])
 						pii_mprotect(data, data_size, mmap_exec);
 					#ifdef _HOST_GUI
 						#ifdef _HOST_NET
-							ret_val = ((int(*)(char* [], void* [], void* [], void* [], void* []))((char*)data + data[5]))(argv, host_os_funcs, host_gui_funcs, host_audio_funcs, host_net_funcs);
+							ret_val = ((int(*)(char* [], void* [], void* [], void* [], void* []))((char*)data + data[1]))(argv, host_os_funcs, host_gui_funcs, host_audio_funcs, host_net_funcs);
 						#else
-							ret_val = ((int(*)(char* [], void* [], void* [], void* [], void* []))((char*)data + data[5]))(argv, host_os_funcs, host_gui_funcs, host_audio_funcs, nullptr);
+							ret_val = ((int(*)(char* [], void* [], void* [], void* [], void* []))((char*)data + data[1]))(argv, host_os_funcs, host_gui_funcs, host_audio_funcs, nullptr);
 						#endif
 					#else
 						#ifdef _HOST_NET
-							ret_val = ((int(*)(char* [], void* [], void* [], void* [], void* []))((char*)data + data[5]))(argv, host_os_funcs, nullptr, nullptr, host_net_funcs);
+							ret_val = ((int(*)(char* [], void* [], void* [], void* [], void* []))((char*)data + data[1]))(argv, host_os_funcs, nullptr, nullptr, host_net_funcs);
 						#else
-							ret_val = ((int(*)(char* [], void* [], void* [], void* [], void* []))((char*)data + data[5]))(argv, host_os_funcs, nullptr, nullptr, nullptr);
+							ret_val = ((int(*)(char* [], void* [], void* [], void* [], void* []))((char*)data + data[1]))(argv, host_os_funcs, nullptr, nullptr, nullptr);
 						#endif
 					#endif
 					}

@@ -36,6 +36,9 @@ uses of `id-encode` and `id-decode`.
 New `(read-blk stream bytes) -> :nil | str` and
 `(write-blk stream str) -> bytes` builtin VP function.
 
+Moved `vp-min, vp-max, vp-abs` into the VP VM proper. ARM64 and x64 have native
+operations `cmov` and `csel` that could implement these.
+
 ------
 
 New `opt-tail-call` VP optimization.
@@ -1489,7 +1492,7 @@ Corrected (#) macro after testing with pre-binding turned off.
 Enabled (pii-remove) now we have Windows support care of Martyn Bliss.
 
 Removed (defcfun) (defcfun-bind) (defcmacro) (defcmacro-bind) from the compiler
-environment. (include) now imports into the `*compile_env*` directly.
+environment. (include) now imports into the `*compile_env` directly.
 
 Fix for Windows main.c gettimeofday() EPOC calculation. GUI clock app now
 displays correctly on Windows.
