@@ -3,7 +3,6 @@
 obj/
 x64/
 ai/
-tests/
 usr/*/*.tre
 os
 cpu
@@ -19,3 +18,7 @@ main.vcxproj.user
 *.dll
 *.img
 *.dmg
+
+# Test screenshots (generated output)
+tests/screenshots/*.cpm
+tests/screenshots/*.png

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradient with stop-opacity -->
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="red" stop-opacity="1"/>
+      <stop offset="100%" stop-color="blue" stop-opacity="0.5"/>
+    </linearGradient>
+
+    <!-- Gradient with style attribute for stop-opacity -->
+    <linearGradient id="grad2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:green;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:yellow;stop-opacity:0.3"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background to show transparency -->
+  <rect x="0" y="0" width="400" height="200" fill="#888888"/>
+
+  <!-- Gradient with stop-opacity attribute -->
+  <rect x="20" y="20" width="160" height="70" fill="url(#grad1)"/>
+
+  <!-- Gradient with stop-opacity in style -->
+  <rect x="200" y="20" width="180" height="70" fill="url(#grad2)"/>
+
+  <!-- Element with opacity attribute -->
+  <rect x="20" y="110" width="160" height="70" fill="red" opacity="0.5"/>
+
+  <!-- Element with fill-opacity -->
+  <rect x="200" y="110" width="180" height="70" fill="blue" fill-opacity="0.5"/>
+</svg>

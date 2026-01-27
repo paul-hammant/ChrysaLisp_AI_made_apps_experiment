@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Simple gradient test without text -->
+
+  <defs>
+    <!-- Horizontal gradient (red to blue) -->
+    <linearGradient id="hgrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="red"/>
+      <stop offset="100%" stop-color="blue"/>
+    </linearGradient>
+
+    <!-- Vertical gradient (yellow to green) -->
+    <linearGradient id="vgrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="yellow"/>
+      <stop offset="100%" stop-color="green"/>
+    </linearGradient>
+
+    <!-- Multi-stop gradient -->
+    <linearGradient id="rainbow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="red"/>
+      <stop offset="25%" stop-color="orange"/>
+      <stop offset="50%" stop-color="yellow"/>
+      <stop offset="75%" stop-color="green"/>
+      <stop offset="100%" stop-color="blue"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Horizontal gradient rectangle -->
+  <rect x="20" y="20" width="160" height="60" fill="url(#hgrad)"/>
+
+  <!-- Vertical gradient rectangle -->
+  <rect x="220" y="20" width="160" height="60" fill="url(#vgrad)"/>
+
+  <!-- Rainbow gradient rectangle -->
+  <rect x="20" y="120" width="360" height="60" fill="url(#rainbow)"/>
+</svg>

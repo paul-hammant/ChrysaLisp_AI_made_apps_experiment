@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="300" height="200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Test stroke-dasharray -->
+
+  <!-- Simple dash pattern -->
+  <line x1="20" y1="20" x2="280" y2="20" stroke="black" stroke-width="2" stroke-dasharray="10,5"/>
+
+  <!-- Longer dash, shorter gap -->
+  <line x1="20" y1="50" x2="280" y2="50" stroke="red" stroke-width="3" stroke-dasharray="20,5"/>
+
+  <!-- Equal dash and gap -->
+  <line x1="20" y1="80" x2="280" y2="80" stroke="blue" stroke-width="2" stroke-dasharray="10,10"/>
+
+  <!-- Multiple values -->
+  <line x1="20" y1="110" x2="280" y2="110" stroke="green" stroke-width="2" stroke-dasharray="15,5,5,5"/>
+
+  <!-- Dash with offset -->
+  <line x1="20" y1="140" x2="280" y2="140" stroke="purple" stroke-width="2" stroke-dasharray="10,5" stroke-dashoffset="5"/>
+
+  <!-- Path with dash -->
+  <path d="M 20,170 Q 150,120 280,170" stroke="orange" stroke-width="2" stroke-dasharray="8,4" fill="none"/>
+
+  <!-- Polyline with dash -->
+  <polyline points="20,190 80,160 140,190 200,160 260,190" stroke="cyan" stroke-width="2" stroke-dasharray="5,5" fill="none"/>
+</svg>

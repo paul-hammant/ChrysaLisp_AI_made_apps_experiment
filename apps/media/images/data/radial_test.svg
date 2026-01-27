@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="rgrad1">
+      <stop offset="0%" stop-color="yellow"/>
+      <stop offset="100%" stop-color="red"/>
+    </radialGradient>
+    <radialGradient id="rgrad2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="white"/>
+      <stop offset="100%" stop-color="blue"/>
+    </radialGradient>
+  </defs>
+  <rect x="10" y="10" width="80" height="80" fill="url(#rgrad1)"/>
+  <rect x="110" y="10" width="80" height="80" fill="url(#rgrad2)"/>
+  <rect x="10" y="110" width="180" height="80" fill="url(#rgrad1)"/>
+</svg>

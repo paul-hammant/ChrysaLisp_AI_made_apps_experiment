@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="300" height="200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect x="0" y="0" width="300" height="200" fill="#cccccc"/>
+
+  <!-- Row 1: Basic color formats -->
+  <!-- Hex color -->
+  <rect x="10" y="10" width="40" height="40" fill="#ff0000"/>
+  <!-- Short hex -->
+  <rect x="60" y="10" width="40" height="40" fill="#0f0"/>
+  <!-- rgb() -->
+  <rect x="110" y="10" width="40" height="40" fill="rgb(0, 0, 255)"/>
+  <!-- rgba() with 50% alpha -->
+  <rect x="160" y="10" width="40" height="40" fill="rgba(255, 0, 255, 0.5)"/>
+  <!-- Named color -->
+  <rect x="210" y="10" width="40" height="40" fill="orange"/>
+
+  <!-- Row 2: HSL color formats -->
+  <!-- hsl() red (0 degrees) -->
+  <rect x="10" y="60" width="40" height="40" fill="hsl(0, 100%, 50%)"/>
+  <!-- hsl() green (120 degrees) -->
+  <rect x="60" y="60" width="40" height="40" fill="hsl(120, 100%, 50%)"/>
+  <!-- hsl() blue (240 degrees) -->
+  <rect x="110" y="60" width="40" height="40" fill="hsl(240, 100%, 50%)"/>
+  <!-- hsla() with 50% alpha -->
+  <rect x="160" y="60" width="40" height="40" fill="hsla(60, 100%, 50%, 0.5)"/>
+  <!-- hsl() gray (0 saturation) -->
+  <rect x="210" y="60" width="40" height="40" fill="hsl(0, 0%, 50%)"/>
+
+  <!-- Row 3: Gradient with various color formats -->
+  <defs>
+    <linearGradient id="colorGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="hsl(0, 100%, 50%)"/>
+      <stop offset="50%" stop-color="rgba(0, 255, 0, 1)"/>
+      <stop offset="100%" stop-color="rgb(0, 0, 255)"/>
+    </linearGradient>
+  </defs>
+  <rect x="10" y="110" width="240" height="40" fill="url(#colorGrad)"/>
+
+  <!-- Row 4: Stroke colors -->
+  <rect x="10" y="160" width="80" height="30" fill="none" stroke="rgba(255, 0, 0, 0.8)" stroke-width="4"/>
+  <rect x="100" y="160" width="80" height="30" fill="none" stroke="hsl(180, 100%, 40%)" stroke-width="4"/>
+  <circle cx="230" cy="175" r="15" fill="hsla(300, 100%, 50%, 0.7)" stroke="rgb(0, 0, 0)" stroke-width="2"/>
+</svg>
